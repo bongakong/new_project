@@ -1,0 +1,34 @@
+if __name__ == '__main__':
+ 
+    nums = [1, 5, 2, 1, 4, 5, 1]
+ 
+    dup = [x for i, x in enumerate(nums) if i != nums.index(x)]
+    print(dup)  # [1, 5, 1]
+    
+    
+if __name__ == '__main__':
+ 
+    nums = [1, 5, 2, 1, 4, 5, 1]
+ 
+    dup = [x for i, x in enumerate(nums) if x in nums[:i]]
+    print(dup)  # [1, 5, 1] 
+    
+    
+ if __name__ == '__main__':
+ 
+    nums = [1, 5, 2, 1, 4, 5, 1]
+ 
+    visited = set()
+    dup = [x for x in nums if x in visited or (visited.add(x) or False)]
+ 
+    print(dup)  # [1, 5, 1]
+ 
+
+from iteration_utilities import unique_everseen
+ 
+if __name__ == '__main__':
+ 
+    nums = [1, 5, 2, 1, 4, 5, 1]
+ 
+    dup = unique_everseen(duplicates(nums))
+    print(dup)        # [1, 5]
